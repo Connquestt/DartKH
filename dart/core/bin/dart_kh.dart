@@ -98,3 +98,12 @@ void data5(int age , String name ) {
 void data6({int? age , String? name} ) {
   print("Name: $name , Age: $age");
 }
+
+void data7({int? age , required String name} ) {
+  print("Name: $name , Age: $age");
+}
+void data8({int age =1 , required String? name} ) {
+  print("Name: $name , Age: $age");
+}
+
+int sum (int a , int b) => a + b; //Arrow function
