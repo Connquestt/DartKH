@@ -63,9 +63,38 @@ for(int i=0 ; i<5 ; i++){
 
   //=======Nullable=========
 
- // int a;//null by default
- // int? b; //Nullable variable
- // print(b);
- // print(a);
+ int a;//null by default
+ int? b; //Nullable variable
+ print(b);
+//  print(a);
 
+// =======Functions==========
+data6(age: 25 , name: "KHalid");
+
+
+}
+// =======Functions==========
+
+void data1 (){
+  print("No return type and no parameters");
+}
+
+void data2 (String name){
+  print("No return type and with parameters: $name");
+}
+int data3 (){
+  print("With return type and no parameters");
+  return 10;
+}
+String data4 (String name){
+  print("With return type and with parameters: $name");
+  return name;
+}
+
+//=======cont==============
+void data5(int age , String name ) {
+  print("Name: $name , Age: $age");
+}
+void data6({int? age , String? name} ) {
+  print("Name: $name , Age: $age");
 }
