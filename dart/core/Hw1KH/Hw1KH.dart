@@ -1,7 +1,7 @@
 void main() {
-  // print(swapNumber(0));
-  //print(checkLetters("The quick brown fox jumps over three meter and better than a lazy dog"));
-  // countLetters("irresistibility");
+  print(swapNumber(0));
+  print(checkLetters("The quick brown fox jumps over three meter and better than a lazy dog"));
+  countLetters("irresistibility");
   countLettersList("mississippi");
 }
 
