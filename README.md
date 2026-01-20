@@ -1,2 +1,2 @@
-A sample command-line application with an entrypoint in `bin/`, library code
-in `lib/`, and example unit test in `test/`.
+#This is a dart and flutter projects repo
+<p> mostly will be of the flutter boot camp </p>
