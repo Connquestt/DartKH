@@ -1,7 +1,11 @@
 void main() {
-  print(swapNumber(0));
-  print(checkLetters("The quick brown fox jumps over three meter and better than a lazy dog"));
-  countLetters("irresistibility");
+  // print(swapNumber(0));
+  // print(
+  //   checkLetters(
+  //     "The quick brown fox jumps over three meter and better than a lazy dog",
+  //   ),
+  // );
+  // countLetters("irresistibility");
   countLettersList("mississippi");
 }
 
@@ -48,6 +52,7 @@ void countLetters(String str) {
 
 //Q3 Extra
 void countLettersList(String str) {
+  print(str);
   List<String> list = [];
   for (int i = 0; i < str.length; i++) {
     list.add(str[i]);
