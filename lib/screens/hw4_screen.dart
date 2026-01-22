@@ -22,7 +22,7 @@ class HomeScreenKH extends StatelessWidget {
               child: Column(
                 children: [
                   Image.asset(
-                    "lib/images/flutter.png",
+                    "assets/images/flutter.png",
                     fit: BoxFit.scaleDown,
                     width: 200,
                     height: 200,
