@@ -4,7 +4,7 @@
 <img width="280" height="280" alt="image" src="https://github.com/user-attachments/assets/536f22d7-8657-4442-baae-b95c94b68a4b" />
 
 **Home Work 4 Screenshot**
-<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/2b9a45c6-6d93-4414-86fc-688684605a83" />
+<img width="960" height="600" alt="image" src="https://github.com/user-attachments/assets/2b9a45c6-6d93-4414-86fc-688684605a83" />
 
 
 
