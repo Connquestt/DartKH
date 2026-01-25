@@ -1,42 +1,41 @@
 import 'package:flutter/material.dart';
 
-class RiyadhScreen extends StatelessWidget {
-  const RiyadhScreen({super.key});
+class JeddahScreen extends StatelessWidget {
+  const JeddahScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     var screenHeight = MediaQuery.of(context).size.height;
     var screenWidth = MediaQuery.of(context).size.width;
-    Map riyadh = {
-      "الدرعيه": "assets/images/diriyah.png",
-      "قصر المصمك": "assets/images/musmac.png",
-      "حافة العالم": "assets/images/edgeOfTheWorld.png",
-      "Boulevard City": "assets/images/blvd.png",
-      "مدينة الملك عبدالله المالية": "assets/images/kafd.png",
+    Map jeddah = {
+      "البلد": "assets/images/albalad.png",
+      "City Walk": "assets/images/cityWalk.png",
+      "نافورة الملك فهد": "assets/images/kingFahadFountain.png",
+      "Winter Wonderland": "assets/images/winterland.png",
+      "مسجد الرحمة": "assets/images/mosque.png",
     };
     List decscription = [
-      "مهد الدولة السعودية الأولى، وتضم حي الطريف المصنف ضمن التراث العالمي لليونسكو، وتُعد رمزًا للتاريخ الوطني.",
-      "قلعة تاريخية تعكس التراث الثقافي للمملكة، وتقع في قلب الرياض وتُعد نقطة انطلاق لاستكشاف المدينة.",
-      "تشكّل منحدرات صخرية شاهقة توفر إطلالات خلابة على الصحراء المحيطة، وهي وجهة شهيرة لمحبي المغامرات والتخييم.",
-      "وجهة ترفيهية حديثة تضم مجموعة متنوعة من المتاجر والمطاعم والمقاهي، وتوفر تجربة تسوق وترفيه فريدة.",
-      "مركز مالي حديث يضم مبانٍ شاهقة ومساحات عمل متطورة، ويُعتبر مركزًا للأعمال والابتكار في المملكة.",
+      "البلد هو الحي التاريخي في جدة، ويشتهر بمبانيه التقليدية والأسواق القديمة التي تعكس التراث الثقافي للمملكة.",
+      "City Walk هو وجهة ترفيهية حديثة تضم مجموعة متنوعة من المتاجر والمطاعم والمقاهي، وتوفر تجربة تسوق وترفيه فريدة.",
+      "نافورة الملك فهد هي واحدة من أعلى النوافير في العالم، وتقع على ساحل جدة، وتوفر مشهدًا خلابًا خاصة في الليل.",
+      "Winter Wonderland هو منتزه ترفيهي يقدم تجربة شتوية فريدة في قلب جدة، مع مجموعة من الألعاب والفعاليات الممتعة للعائلات.",
+      "مسجد الرحمة، المعروف أيضًا بمسجد العائم، يقع على كورنيش جدة ويتميز بتصميمه المعماري الفريد الذي يجعله يبدو وكأنه يطفو على الماء.",
     ];
 
     return Scaffold(
       //AppBar
       appBar: AppBar(
         title: Text(
-          "معالم الرياض",
+          "معالم جدة",
           style: TextStyle(
-            color: Color.fromARGB(255, 185, 153, 110),
+            color: Color.fromARGB(255, 42, 64, 66),
             fontSize: 23,
             fontWeight: FontWeight.bold,
           ),
         ),
-        centerTitle: false,
-        backgroundColor: const Color.fromARGB(255, 112, 75, 26),
+        backgroundColor: const Color.fromARGB(255, 54, 220, 241),
       ),
-      backgroundColor: const Color.fromARGB(255, 61, 29, 3),
+      backgroundColor: const Color.fromARGB(255, 178, 224, 245),
       //Body
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 8),
@@ -51,9 +50,9 @@ class RiyadhScreen extends StatelessWidget {
                 width: screenWidth,
                 height: screenHeight * 0.17,
                 decoration: BoxDecoration(
-                  color: const Color.fromARGB(255, 100, 66, 22),
+                  color: const Color.fromARGB(255, 129, 168, 187),
                   border: Border.all(
-                    color: const Color.fromARGB(255, 73, 49, 4),
+                    color: const Color.fromARGB(255, 27, 117, 190),
                     width: 7,
                   ),
                   borderRadius: BorderRadius.circular(40),
@@ -62,11 +61,11 @@ class RiyadhScreen extends StatelessWidget {
                 child: Column(
                   children: [
                     Text(
-                      "${riyadh.keys.elementAt(index)}",
+                      "${jeddah.keys.elementAt(index)}",
                       style: TextStyle(
                         fontSize: 50,
                         fontWeight: FontWeight.bold,
-                        color: Color.fromARGB(255, 151, 124, 88),
+                        color: Color.fromARGB(255, 42, 64, 66),
                       ),
                     ),
 
@@ -79,13 +78,13 @@ class RiyadhScreen extends StatelessWidget {
                           height: 200,
                           decoration: BoxDecoration(
                             border: Border.all(
-                              color: const Color.fromARGB(255, 90, 54, 8),
+                              color: const Color.fromARGB(255, 27, 117, 190),
                               width: 3,
                             ),
                             borderRadius: BorderRadius.circular(40),
                             image: DecorationImage(
                               image: AssetImage(
-                                riyadh[riyadh.keys.elementAt(index)],
+                                jeddah[jeddah.keys.elementAt(index)],
                               ),
                               alignment: Alignment.center,
                               fit: BoxFit.cover,
@@ -102,7 +101,7 @@ class RiyadhScreen extends StatelessWidget {
                             style: TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
-                              color: Color.fromARGB(255, 151, 124, 88),
+                              color: Color.fromARGB(255, 42, 64, 66),
                             ),
                           ),
                         ),
@@ -112,7 +111,7 @@ class RiyadhScreen extends StatelessWidget {
                             // Navigator.push(
                             //   context,
                             //   MaterialPageRoute(
-                            //     builder: ,
+                            //     builder:
                             //   ),
                             // );
                           },
@@ -132,5 +131,7 @@ class RiyadhScreen extends StatelessWidget {
 }
 
 void main() {
-  runApp(const MaterialApp(home: RiyadhScreen()));
+  runApp(
+    const MaterialApp(home: JeddahScreen(), debugShowCheckedModeBanner: false),
+  );
 }
