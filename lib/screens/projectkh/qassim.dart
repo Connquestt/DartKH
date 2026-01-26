@@ -1,20 +1,27 @@
-import 'package:dart_kh/constants/colors.dart';
-import 'package:dart_kh/extensions/screen_size.dart';
-import 'package:dart_kh/data/data.dart';
-import 'package:dart_kh/data/global_data.dart';
-import 'package:dart_kh/models/cities_model.dart';
 import 'package:flutter/material.dart';
 
 class QassimScreen extends StatelessWidget {
   const QassimScreen({super.key});
   @override
   Widget build(BuildContext context) {
-    var screenHeight = ScreenSize(context).heightScreen;
-    var screenWidth = ScreenSize(context).wisthScreen;
+    var screenHeight = MediaQuery.of(context).size.height;
+    var screenWidth = MediaQuery.of(context).size.width;
 
-    for (var element in qassimData) {
-      qassimList.add(City.fromjson(element));
-    }
+    Map qassim = {
+      "مهرجان بريدة للتمور": "assets/images/buraydahDates.png",
+      "متحف بريدة": "assets/images/buraydahMuseum.png",
+      "مهرجان الكليجا": "assets/images/kulaija.png",
+      "مزرعة اكتوبر": "assets/images/octFarm.png",
+      "مزرعة وارف": "assets/images/wrfFarm.png",
+    };
+
+    List decscription = [
+      "يُقام سنويًا في مدينة بريدة، ويُعد من أكبر مهرجانات التمور في العالم، حيث يعرض مجموعة متنوعة من التمور المحلية والعالمية.",
+      "متحف يضم مجموعة غنية من القطع الأثرية والتاريخية التي تعكس تراث وثقافة منطقة القصيم والمملكة العربية السعودية بشكل عام.",
+      "مهرجان ثقافي يحتفي بالكليجا، وهو نوع من الحلويات التقليدية المصنوعة من التمر، ويشمل فعاليات ترفيهية ومسابقات.",
+      "مزرعة سياحية تقدم تجربة فريدة للزوار للاستمتاع بالطبيعة والأنشطة الزراعية، بالإضافة إلى تقديم منتجات زراعية طازجة.",
+      "مزرعة عائلية توفر بيئة هادئة وممتعة للزوار، مع مجموعة متنوعة من الأنشطة الترفيهية والتعليمية للأطفال والكبار على حد سواء.",
+    ];
 
     return Scaffold(
       //AppBar
@@ -22,14 +29,14 @@ class QassimScreen extends StatelessWidget {
         title: Text(
           "معالم القصيم",
           style: TextStyle(
-            color: QassimColors.textColor,
+            color: Color.fromARGB(255, 211, 126, 126),
             fontSize: 23,
             fontWeight: FontWeight.bold,
           ),
         ),
-        backgroundColor: QassimColors.appBarColor,
+        backgroundColor: const Color.fromARGB(255, 121, 9, 9),
       ),
-      backgroundColor: QassimColors.scaffoldColor,
+      backgroundColor: const Color.fromARGB(255, 49, 3, 3),
       //Body
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 8),
@@ -44,19 +51,22 @@ class QassimScreen extends StatelessWidget {
                 width: screenWidth,
                 height: screenHeight * 0.17,
                 decoration: BoxDecoration(
-                  color: QassimColors.containerColor,
-                  border: Border.all(color: QassimColors.borderColor, width: 7),
+                  color: const Color.fromARGB(255, 109, 36, 36),
+                  border: Border.all(
+                    color: const Color.fromARGB(255, 94, 11, 11),
+                    width: 7,
+                  ),
                   borderRadius: BorderRadius.circular(40),
                 ),
                 //Contains
                 child: Column(
                   children: [
                     Text(
-                      "${qassimList[index].name}",
+                      "${qassim.keys.elementAt(index)}",
                       style: TextStyle(
                         fontSize: 50,
                         fontWeight: FontWeight.bold,
-                        color: QassimColors.textColor,
+                        color: Color.fromARGB(255, 211, 126, 126),
                       ),
                     ),
 
@@ -69,12 +79,14 @@ class QassimScreen extends StatelessWidget {
                           height: 200,
                           decoration: BoxDecoration(
                             border: Border.all(
-                              color: QassimColors.borderColor,
+                              color: const Color.fromARGB(255, 94, 11, 11),
                               width: 3,
                             ),
                             borderRadius: BorderRadius.circular(40),
                             image: DecorationImage(
-                              image: AssetImage(qassimList[index].image!),
+                              image: AssetImage(
+                                qassim[qassim.keys.elementAt(index)],
+                              ),
                               alignment: Alignment.center,
                               fit: BoxFit.cover,
                             ),
@@ -85,12 +97,12 @@ class QassimScreen extends StatelessWidget {
                           width: 200,
                           height: 200,
                           child: Text(
-                            "${qassimList[index].description}",
+                            decscription[index],
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
-                              color: QassimColors.textColor,
+                              color: Color.fromARGB(255, 211, 126, 126),
                             ),
                           ),
                         ),

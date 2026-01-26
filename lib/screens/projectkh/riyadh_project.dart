@@ -1,8 +1,3 @@
-import 'package:dart_kh/constants/colors.dart';
-import 'package:dart_kh/extensions/screen_size.dart';
-import 'package:dart_kh/models/cities_model.dart';
-import 'package:dart_kh/data/data.dart';
-import 'package:dart_kh/data/global_data.dart';
 import 'package:flutter/material.dart';
 
 class RiyadhScreen extends StatelessWidget {
@@ -10,11 +5,22 @@ class RiyadhScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    for (var element in riyadhData) {
-      riyadhList.add(City.fromjson(element));
-    }
-    var screenHeight = ScreenSize(context).heightScreen;
-    var screenWidth = ScreenSize(context).wisthScreen;
+    var screenHeight = MediaQuery.of(context).size.height;
+    var screenWidth = MediaQuery.of(context).size.width;
+    Map riyadh = {
+      "الدرعيه": "assets/images/diriyah.png",
+      "قصر المصمك": "assets/images/musmac.png",
+      "حافة العالم": "assets/images/edgeOfTheWorld.png",
+      "Boulevard City": "assets/images/blvd.png",
+      "مدينة الملك عبدالله المالية": "assets/images/kafd.png",
+    };
+    List decscription = [
+      "مهد الدولة السعودية الأولى، وتضم حي الطريف المصنف ضمن التراث العالمي لليونسكو، وتُعد رمزًا للتاريخ الوطني.",
+      "قلعة تاريخية تعكس التراث الثقافي للمملكة، وتقع في قلب الرياض وتُعد نقطة انطلاق لاستكشاف المدينة.",
+      "تشكّل منحدرات صخرية شاهقة توفر إطلالات خلابة على الصحراء المحيطة، وهي وجهة شهيرة لمحبي المغامرات والتخييم.",
+      "وجهة ترفيهية حديثة تضم مجموعة متنوعة من المتاجر والمطاعم والمقاهي، وتوفر تجربة تسوق وترفيه فريدة.",
+      "مركز مالي حديث يضم مبانٍ شاهقة ومساحات عمل متطورة، ويُعتبر مركزًا للأعمال والابتكار في المملكة.",
+    ];
 
     return Scaffold(
       //AppBar
@@ -22,15 +28,15 @@ class RiyadhScreen extends StatelessWidget {
         title: Text(
           "معالم الرياض",
           style: TextStyle(
-            color: RiyadhColors.textColor,
+            color: Color.fromARGB(255, 185, 153, 110),
             fontSize: 23,
             fontWeight: FontWeight.bold,
           ),
         ),
         centerTitle: false,
-        backgroundColor: RiyadhColors.appBarColor,
+        backgroundColor: const Color.fromARGB(255, 112, 75, 26),
       ),
-      backgroundColor: RiyadhColors.scaffoldColor,
+      backgroundColor: const Color.fromARGB(255, 61, 29, 3),
       //Body
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 8),
@@ -45,19 +51,22 @@ class RiyadhScreen extends StatelessWidget {
                 width: screenWidth,
                 height: screenHeight * 0.17,
                 decoration: BoxDecoration(
-                  color: RiyadhColors.containerColor,
-                  border: Border.all(color: RiyadhColors.borderColor, width: 7),
+                  color: const Color.fromARGB(255, 100, 66, 22),
+                  border: Border.all(
+                    color: const Color.fromARGB(255, 73, 49, 4),
+                    width: 7,
+                  ),
                   borderRadius: BorderRadius.circular(40),
                 ),
                 //Contains
                 child: Column(
                   children: [
                     Text(
-                      "${riyadhList[index].name}",
+                      "${riyadh.keys.elementAt(index)}",
                       style: TextStyle(
                         fontSize: 50,
                         fontWeight: FontWeight.bold,
-                        color: RiyadhColors.textColor,
+                        color: Color.fromARGB(255, 151, 124, 88),
                       ),
                     ),
 
@@ -70,12 +79,14 @@ class RiyadhScreen extends StatelessWidget {
                           height: 200,
                           decoration: BoxDecoration(
                             border: Border.all(
-                              color: RiyadhColors.borderColor,
+                              color: const Color.fromARGB(255, 90, 54, 8),
                               width: 3,
                             ),
                             borderRadius: BorderRadius.circular(40),
                             image: DecorationImage(
-                              image: AssetImage(riyadhList[index].image!),
+                              image: AssetImage(
+                                riyadh[riyadh.keys.elementAt(index)],
+                              ),
                               alignment: Alignment.center,
                               fit: BoxFit.cover,
                             ),
@@ -86,12 +97,12 @@ class RiyadhScreen extends StatelessWidget {
                           width: 200,
                           height: 200,
                           child: Text(
-                            "${riyadhList[index].description}",
+                            decscription[index],
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
-                              color: RiyadhColors.textColor,
+                              color: Color.fromARGB(255, 151, 124, 88),
                             ),
                           ),
                         ),
