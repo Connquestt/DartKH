@@ -119,6 +119,4 @@ class QassimScreen extends StatelessWidget {
   }
 }
 
-void main() {
-  runApp(const MaterialApp(home: QassimScreen()));
-}
+

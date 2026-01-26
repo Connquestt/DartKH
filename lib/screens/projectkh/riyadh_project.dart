@@ -120,6 +120,4 @@ class RiyadhScreen extends StatelessWidget {
   }
 }
 
-void main() {
-  runApp(const MaterialApp(home: RiyadhScreen()));
-}
+
