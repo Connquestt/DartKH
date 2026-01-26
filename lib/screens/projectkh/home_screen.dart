@@ -1,3 +1,4 @@
+import 'package:dart_kh/constants/colors.dart';
 import 'package:dart_kh/screens/projectkh/jeddah.dart';
 import 'package:dart_kh/screens/projectkh/qassim.dart';
 import 'package:dart_kh/screens/projectkh/riyadh_project.dart';
@@ -13,10 +14,10 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int _currentIndex = 0;
   List<Widget> tabs = const [RiyadhScreen(), QassimScreen(), JeddahScreen()];
-  List colors = const [
-    Color.fromARGB(255, 61, 29, 3),
-    Color.fromARGB(255, 49, 3, 3),
-    Color.fromARGB(255, 178, 224, 245),
+  List colors = [
+    RiyadhColors.scaffoldColor,
+    QassimColors.scaffoldColor,
+    JeddahColors.scaffoldColor,
   ];
 
   @override
