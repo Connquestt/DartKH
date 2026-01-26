@@ -1,3 +1,8 @@
+import 'package:dart_kh/constants/colors.dart';
+import 'package:dart_kh/extensions/screen_size.dart';
+import 'package:dart_kh/data/data.dart';
+import 'package:dart_kh/data/global_data.dart';
+import 'package:dart_kh/models/cities_model.dart';
 import 'package:flutter/material.dart';
 
 class JeddahScreen extends StatelessWidget {
@@ -5,22 +10,12 @@ class JeddahScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var screenHeight = MediaQuery.of(context).size.height;
-    var screenWidth = MediaQuery.of(context).size.width;
-    Map jeddah = {
-      "البلد": "assets/images/albalad.png",
-      "City Walk": "assets/images/cityWalk.png",
-      "نافورة الملك فهد": "assets/images/kingFahadFountain.png",
-      "Winter Wonderland": "assets/images/winterland.png",
-      "مسجد الرحمة": "assets/images/mosque.png",
-    };
-    List decscription = [
-      "البلد هو الحي التاريخي في جدة، ويشتهر بمبانيه التقليدية والأسواق القديمة التي تعكس التراث الثقافي للمملكة.",
-      "City Walk هو وجهة ترفيهية حديثة تضم مجموعة متنوعة من المتاجر والمطاعم والمقاهي، وتوفر تجربة تسوق وترفيه فريدة.",
-      "نافورة الملك فهد هي واحدة من أعلى النوافير في العالم، وتقع على ساحل جدة، وتوفر مشهدًا خلابًا خاصة في الليل.",
-      "Winter Wonderland هو منتزه ترفيهي يقدم تجربة شتوية فريدة في قلب جدة، مع مجموعة من الألعاب والفعاليات الممتعة للعائلات.",
-      "مسجد الرحمة، المعروف أيضًا بمسجد العائم، يقع على كورنيش جدة ويتميز بتصميمه المعماري الفريد الذي يجعله يبدو وكأنه يطفو على الماء.",
-    ];
+    var screenHeight = ScreenSize(context).heightScreen;
+    var screenWidth = ScreenSize(context).wisthScreen;
+
+    for (var element in jeddahData) {
+      jeddahList.add(City.fromjson(element));
+    }
 
     return Scaffold(
       //AppBar
@@ -28,14 +23,14 @@ class JeddahScreen extends StatelessWidget {
         title: Text(
           "معالم جدة",
           style: TextStyle(
-            color: Color.fromARGB(255, 42, 64, 66),
+            color: JeddahColors.textColor,
             fontSize: 23,
             fontWeight: FontWeight.bold,
           ),
         ),
-        backgroundColor: const Color.fromARGB(255, 54, 220, 241),
+        backgroundColor: JeddahColors.appBarColor,
       ),
-      backgroundColor: const Color.fromARGB(255, 178, 224, 245),
+      backgroundColor: JeddahColors.scaffoldColor,
       //Body
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 8),
@@ -50,22 +45,19 @@ class JeddahScreen extends StatelessWidget {
                 width: screenWidth,
                 height: screenHeight * 0.17,
                 decoration: BoxDecoration(
-                  color: const Color.fromARGB(255, 129, 168, 187),
-                  border: Border.all(
-                    color: const Color.fromARGB(255, 27, 117, 190),
-                    width: 7,
-                  ),
+                  color: JeddahColors.containerColor,
+                  border: Border.all(color: JeddahColors.borderColor, width: 7),
                   borderRadius: BorderRadius.circular(40),
                 ),
                 //Contains
                 child: Column(
                   children: [
                     Text(
-                      "${jeddah.keys.elementAt(index)}",
+                      "${jeddahList[index].name}",
                       style: TextStyle(
                         fontSize: 50,
                         fontWeight: FontWeight.bold,
-                        color: Color.fromARGB(255, 42, 64, 66),
+                        color: JeddahColors.textColor,
                       ),
                     ),
 
@@ -78,14 +70,12 @@ class JeddahScreen extends StatelessWidget {
                           height: 200,
                           decoration: BoxDecoration(
                             border: Border.all(
-                              color: const Color.fromARGB(255, 27, 117, 190),
+                              color: JeddahColors.borderColor,
                               width: 3,
                             ),
                             borderRadius: BorderRadius.circular(40),
                             image: DecorationImage(
-                              image: AssetImage(
-                                jeddah[jeddah.keys.elementAt(index)],
-                              ),
+                              image: AssetImage(jeddahList[index].image!),
                               alignment: Alignment.center,
                               fit: BoxFit.cover,
                             ),
@@ -96,12 +86,12 @@ class JeddahScreen extends StatelessWidget {
                           width: 200,
                           height: 200,
                           child: Text(
-                            decscription[index],
+                            "${jeddahList[index].description}",
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
-                              color: Color.fromARGB(255, 42, 64, 66),
+                              color: JeddahColors.textColor,
                             ),
                           ),
                         ),
