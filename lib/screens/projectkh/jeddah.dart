@@ -11,7 +11,7 @@ class JeddahScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var screenHeight = ScreenSize(context).heightScreen;
-    var screenWidth = ScreenSize(context).wisthScreen;
+    var screenWidth = ScreenSize(context).widthScreen;
 
     for (var element in jeddahData) {
       jeddahList.add(City.fromjson(element));
