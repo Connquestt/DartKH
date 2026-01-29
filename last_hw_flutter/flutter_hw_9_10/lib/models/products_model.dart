@@ -26,7 +26,7 @@ class ProductsModel {
       productPrice: (json['price'] as num?)?.toDouble(),
       productRating: (json['rating'] as num?)?.toDouble(),
       productThumbnail: json['thumbnail'] ?? "assets/images/noimage.png",
-      reviews: json['ratings'] ?? [],
+      reviews: json['reviews'] ?? [],
     );
   }
 }

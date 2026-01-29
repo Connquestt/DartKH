@@ -3,7 +3,6 @@ import 'package:dart_kh/models/products_model.dart';
 import 'package:dart_kh/services/url_launch.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class ProductDetail extends StatelessWidget {
   final ProductsModel product;
@@ -15,7 +14,10 @@ class ProductDetail extends StatelessWidget {
     var screenHeight = context.screenHeight;
     return Scaffold(
       appBar: AppBar(
-        title: Text("Product Details", style: TextStyle(color: Colors.white)),
+        title: Text(
+          "${product.productTitle}",
+          style: TextStyle(color: Colors.white),
+        ),
         backgroundColor: Colors.green.shade300,
         centerTitle: true,
       ),
@@ -60,7 +62,7 @@ class ProductDetail extends StatelessWidget {
               ),
               Container(
                 height: screenHeight / 5,
-                width: screenWidth / 2,
+                width: screenWidth / 1,
                 decoration: BoxDecoration(
                   border: Border.all(color: Colors.black),
                   borderRadius: BorderRadius.circular(20),
@@ -102,4 +104,3 @@ class ProductDetail extends StatelessWidget {
     );
   }
 }
-
