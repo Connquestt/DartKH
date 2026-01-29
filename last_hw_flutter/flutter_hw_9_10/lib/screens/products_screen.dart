@@ -1,4 +1,3 @@
-import 'package:dart_kh/extensions/screen_size.dart';
 import 'package:dart_kh/service/api.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
@@ -11,12 +10,8 @@ class ProductsScreen extends StatefulWidget {
 }
 
 class _ProductsScreenState extends State<ProductsScreen> {
-  List products = [];
-  @override
   @override
   Widget build(BuildContext context) {
-    var screenWidth = context.screenWidth;
-    var screenHeight = context.screenHeight;
     return Scaffold(
       appBar: AppBar(
         title: Text(

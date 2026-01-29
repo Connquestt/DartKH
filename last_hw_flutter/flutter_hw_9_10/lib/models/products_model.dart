@@ -3,8 +3,10 @@ class ProductsModel {
   String? productTitle;
   String? productDescription;
   double? productPrice;
-  double? productRating;  
+  double? productRating;
   String? productThumbnail;
+  List? images;
+  List? reviews;
 
   ProductsModel({
     this.productId,
@@ -13,6 +15,7 @@ class ProductsModel {
     this.productPrice,
     this.productRating,
     this.productThumbnail,
+    this.reviews,
   });
 
   factory ProductsModel.fromJson(Map<String, dynamic> json) {
@@ -23,6 +26,7 @@ class ProductsModel {
       productPrice: (json['price'] as num?)?.toDouble(),
       productRating: (json['rating'] as num?)?.toDouble(),
       productThumbnail: json['thumbnail'] ?? "assets/images/noimage.png",
+      reviews: json['ratings'] ?? [],
     );
   }
 }
