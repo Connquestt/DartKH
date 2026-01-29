@@ -32,6 +32,7 @@ class _ProductsScreenState extends State<ProductsScreen> {
           future: Api.getData(),
           builder: (context, snapshot) {
             return GridView.builder(
+              itemCount: snapshot.data!.length,
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 childAspectRatio: 1,
