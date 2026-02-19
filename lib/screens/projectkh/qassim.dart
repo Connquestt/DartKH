@@ -10,7 +10,7 @@ class QassimScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var screenHeight = ScreenSize(context).heightScreen;
-    var screenWidth = ScreenSize(context).wisthScreen;
+    var screenWidth = ScreenSize(context).widthScreen;
 
     for (var element in qassimData) {
       qassimList.add(City.fromjson(element));
@@ -118,5 +118,3 @@ class QassimScreen extends StatelessWidget {
     );
   }
 }
-
-

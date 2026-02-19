@@ -14,7 +14,7 @@ class RiyadhScreen extends StatelessWidget {
       riyadhList.add(City.fromjson(element));
     }
     var screenHeight = ScreenSize(context).heightScreen;
-    var screenWidth = ScreenSize(context).wisthScreen;
+    var screenWidth = ScreenSize(context).widthScreen;
 
     return Scaffold(
       //AppBar
@@ -119,5 +119,3 @@ class RiyadhScreen extends StatelessWidget {
     );
   }
 }
-
-
